@@ -2,7 +2,7 @@
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> 
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,9 +20,9 @@ public class Teacher
 		this.name = name;
 		this.student = student;
 	}
-	//此处省略了name和student的setter和getter方法
+	//姝ゅ鐪佺暐浜唍ame鍜宻tudent鐨剆etter鍜実etter鏂规硶
 
-	// name的setter和getter方法
+	// name鐨剆etter鍜実etter鏂规硶
 	public void setName(String name)
 	{
 		this.name = name;
@@ -32,7 +32,7 @@ public class Teacher
 		return this.name;
 	}
 
-	// student的setter和getter方法
+	// student鐨剆etter鍜実etter鏂规硶
 	public void setStudent(Person student)
 	{
 		this.student = student;

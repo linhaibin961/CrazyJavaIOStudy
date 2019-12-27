@@ -5,7 +5,7 @@ import java.nio.channels.*;
 import java.nio.charset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,26 +19,26 @@ public class ReadFile
 		throws IOException
 	{
 		try(
-			// ´´½¨ÎÄ¼şÊäÈëÁ÷
+			// åˆ›å»ºæ–‡ä»¶è¾“å…¥æµ
 			FileInputStream fis = new FileInputStream("15.9/ReadFile.java");
-			// ´´½¨Ò»¸öFileChannel
+			// åˆ›å»ºä¸€ä¸ªFileChannel
 			FileChannel fcin = fis.getChannel())
 		{
-			// ¶¨ÒåÒ»¸öByteBuffer¶ÔÏó£¬ÓÃÓÚÖØ¸´È¡Ë®ÖĞ1
+			// å®šä¹‰ä¸€ä¸ªByteBufferå¯¹è±¡ï¼Œç”¨äºé‡å¤å–æ°´ä¸­1
 			ByteBuffer bbuff = ByteBuffer.allocate(64);
-			// ½«FileChannelÖĞÊı¾İ·ÅÈëByteBufferÖĞ
+			// å°†FileChannelä¸­æ•°æ®æ”¾å…¥ByteBufferä¸­
 			while( fcin.read(bbuff) != -1 )
 			{
-				// Ëø¶¨BufferµÄ¿Õ°×Çø
+				// é”å®šBufferçš„ç©ºç™½åŒº
 				bbuff.flip();
-				// ´´½¨Charset¶ÔÏó
+				// åˆ›å»ºCharsetå¯¹è±¡
 				Charset charset = Charset.forName("GBK");
-				// ´´½¨½âÂëÆ÷(CharsetDecoder)¶ÔÏó
+				// åˆ›å»ºè§£ç å™¨(CharsetDecoder)å¯¹è±¡
 				CharsetDecoder decoder = charset.newDecoder();
-				// ½«ByteBufferµÄÄÚÈİ×ªÂë
+				// å°†ByteBufferçš„å†…å®¹è½¬ç 
 				CharBuffer cbuff = decoder.decode(bbuff);
 				System.out.print(cbuff);
-				// ½«Buffer³õÊ¼»¯£¬ÎªÏÂÒ»´Î¶ÁÈ¡Êı¾İ×ö×¼±¸
+				// å°†Bufferåˆå§‹åŒ–ï¼Œä¸ºä¸‹ä¸€æ¬¡è¯»å–æ•°æ®åšå‡†å¤‡
 				bbuff.clear();
 			}
 		}

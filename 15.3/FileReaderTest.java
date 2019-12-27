@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,17 +15,17 @@ public class FileReaderTest
 	public static void main(String[] args)
 	{
 		try(
-			// ´´½¨×Ö·ûÊäÈëÁ÷
+			// åˆ›å»ºå­—ç¬¦è¾“å…¥æµ
 			FileReader fr = new FileReader("15.3/FileReaderTest.java"))
 		{
-			// ´´½¨Ò»¸ö³¤¶ÈÎª32µÄ¡°ÖñÍ²¡±
+			// åˆ›å»ºä¸€ä¸ªé•¿åº¦ä¸º32çš„â€œç«¹ç­’â€
 			char[] cbuf = new char[32];
-			// ÓÃÓÚ±£´æÊµ¼Ê¶ÁÈ¡µÄ×Ö·ûÊı
+			// ç”¨äºä¿å­˜å®é™…è¯»å–çš„å­—ç¬¦æ•°
 			int hasRead = 0;
-			// Ê¹ÓÃÑ­»·À´ÖØ¸´¡°È¡Ë®¡±¹ı³Ì
+			// ä½¿ç”¨å¾ªç¯æ¥é‡å¤â€œå–æ°´â€è¿‡ç¨‹
 			while ((hasRead = fr.read(cbuf)) > 0 )
 			{
-				// È¡³ö¡°ÖñÍ²¡±ÖĞË®µÎ£¨×Ö·û£©£¬½«×Ö·ûÊı×é×ª»»³É×Ö·û´®ÊäÈë£¡
+				// å–å‡ºâ€œç«¹ç­’â€ä¸­æ°´æ»´ï¼ˆå­—ç¬¦ï¼‰ï¼Œå°†å­—ç¬¦æ•°ç»„è½¬æ¢æˆå­—ç¬¦ä¸²è¾“å…¥ï¼
 				System.out.print(new String(cbuf , 0 , hasRead));
 			}
 		}

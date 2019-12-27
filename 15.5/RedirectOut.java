@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,14 +15,14 @@ public class RedirectOut
 	public static void main(String[] args) 
 	{
 		try(
-			// Ò»´ÎĞÔ´´½¨PrintStreamÊä³öÁ÷
+			// ä¸€æ¬¡æ€§åˆ›å»ºPrintStreamè¾“å‡ºæµ
 			PrintStream ps = new PrintStream(new FileOutputStream("out.txt")))
 		{
-			// ½«±ê×¼Êä³öÖØ¶¨Ïòµ½psÊä³öÁ÷
+			// å°†æ ‡å‡†è¾“å‡ºé‡å®šå‘åˆ°psè¾“å‡ºæµ
 			System.setOut(ps);
-			// Ïò±ê×¼Êä³öÊä³öÒ»¸ö×Ö·û´®
-			System.out.println("ÆÕÍ¨×Ö·û´®");
-			// Ïò±ê×¼Êä³öÊä³öÒ»¸ö¶ÔÏó
+			// å‘æ ‡å‡†è¾“å‡ºè¾“å‡ºä¸€ä¸ªå­—ç¬¦ä¸²
+			System.out.println("æ™®é€šå­—ç¬¦ä¸²");
+			// å‘æ ‡å‡†è¾“å‡ºè¾“å‡ºä¸€ä¸ªå¯¹è±¡
 			System.out.println(new RedirectOut());
 		}
 		catch (IOException ex)

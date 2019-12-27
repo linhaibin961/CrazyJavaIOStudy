@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,18 +18,18 @@ public class RandomAccessFileTest
 			RandomAccessFile raf =  new RandomAccessFile(
 				"15.7/RandomAccessFileTest.java" , "r"))
 		{
-			// »ñÈ¡RandomAccessFile¶ÔÏóÎÄ¼şÖ¸ÕëµÄÎ»ÖÃ£¬³õÊ¼Î»ÖÃÊÇ0
-			System.out.println("RandomAccessFileµÄÎÄ¼şÖ¸ÕëµÄ³õÊ¼Î»ÖÃ£º" 
+			// è·å–RandomAccessFileå¯¹è±¡æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®ï¼Œåˆå§‹ä½ç½®æ˜¯0
+			System.out.println("RandomAccessFileçš„æ–‡ä»¶æŒ‡é’ˆçš„åˆå§‹ä½ç½®ï¼š" 
 				+ raf.getFilePointer());
-			// ÒÆ¶¯rafµÄÎÄ¼ş¼ÇÂ¼Ö¸ÕëµÄÎ»ÖÃ
+			// ç§»åŠ¨rafçš„æ–‡ä»¶è®°å½•æŒ‡é’ˆçš„ä½ç½®
 			raf.seek(300);
 			byte[] bbuf = new byte[1024];
-			// ÓÃÓÚ±£´æÊµ¼Ê¶ÁÈ¡µÄ×Ö½ÚÊı
+			// ç”¨äºä¿å­˜å®é™…è¯»å–çš„å­—èŠ‚æ•°
 			int hasRead = 0;
-			// Ê¹ÓÃÑ­»·À´ÖØ¸´¡°È¡Ë®¡±¹ı³Ì
+			// ä½¿ç”¨å¾ªç¯æ¥é‡å¤â€œå–æ°´â€è¿‡ç¨‹
 			while ((hasRead = raf.read(bbuf)) > 0 )
 			{
-				// È¡³ö¡°ÖñÍ²¡±ÖĞË®µÎ£¨×Ö½Ú£©£¬½«×Ö½ÚÊı×é×ª»»³É×Ö·û´®ÊäÈë£¡
+				// å–å‡ºâ€œç«¹ç­’â€ä¸­æ°´æ»´ï¼ˆå­—èŠ‚ï¼‰ï¼Œå°†å­—èŠ‚æ•°ç»„è½¬æ¢æˆå­—ç¬¦ä¸²è¾“å…¥ï¼
 				System.out.print(new String(bbuf , 0 , hasRead ));
 			}
 		}

@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,18 +14,18 @@ public class FileTest
 {
 	public static void main(String[] args)
 	{
-		/*// ÒÔµ±Ç°Â·¾¶À´´´½¨Ò»¸öFile¶ÔÏó
+		/*// ä»¥å½“å‰è·¯å¾„æ¥åˆ›å»ºä¸€ä¸ªFileå¯¹è±¡
 		File file = new File("."); 
-		// »ñÈ¡´´½¨µÄÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
-		System.out.println("»ñÈ¡´´½¨µÄÎÄ¼şµÄ¾ø¶ÔÂ·¾¶£¬"+file.getAbsolutePath());
-		// Ö±½Ó»ñÈ¡ÎÄ¼şÃû£¬Êä³öÒ»µã
-		System.out.println("Ö±½Ó»ñÈ¡ÎÄ¼şÃû£¬Êä³öÒ»µã£¬"+file.getName());
-		// »ñÈ¡Ïà¶ÔÂ·¾¶µÄ¸¸Â·¾¶¿ÉÄÜ³ö´í£¬ÏÂÃæ´úÂëÊä³önull
-		System.out.println("»ñÈ¡Ïà¶ÔÂ·¾¶µÄ¸¸Â·¾¶¿ÉÄÜ³ö´í£¬ÏÂÃæ´úÂëÊä³önull£¬"+file.getParent());
-		// »ñÈ¡¾ø¶ÔÂ·¾¶
-		System.out.println("»ñÈ¡¾ø¶ÔÂ·¾¶£¬"+file.getAbsoluteFile());
-		// »ñÈ¡ÉÏÒ»¼¶Â·¾¶
-		System.out.println("»ñÈ¡ÉÏÒ»¼¶Â·¾¶£¬"+file.getAbsoluteFile().getParent());*/
+		// è·å–åˆ›å»ºçš„æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+		System.out.println("è·å–åˆ›å»ºçš„æ–‡ä»¶çš„ç»å¯¹è·¯å¾„ï¼Œ"+file.getAbsolutePath());
+		// ç›´æ¥è·å–æ–‡ä»¶åï¼Œè¾“å‡ºä¸€ç‚¹
+		System.out.println("ç›´æ¥è·å–æ–‡ä»¶åï¼Œè¾“å‡ºä¸€ç‚¹ï¼Œ"+file.getName());
+		// è·å–ç›¸å¯¹è·¯å¾„çš„çˆ¶è·¯å¾„å¯èƒ½å‡ºé”™ï¼Œä¸‹é¢ä»£ç è¾“å‡ºnull
+		System.out.println("è·å–ç›¸å¯¹è·¯å¾„çš„çˆ¶è·¯å¾„å¯èƒ½å‡ºé”™ï¼Œä¸‹é¢ä»£ç è¾“å‡ºnullï¼Œ"+file.getParent());
+		// è·å–ç»å¯¹è·¯å¾„
+		System.out.println("è·å–ç»å¯¹è·¯å¾„ï¼Œ"+file.getAbsoluteFile());
+		// è·å–ä¸Šä¸€çº§è·¯å¾„
+		System.out.println("è·å–ä¸Šä¸€çº§è·¯å¾„ï¼Œ"+file.getAbsoluteFile().getParent());*/
 		
 		
 		try {
@@ -52,28 +52,28 @@ public class FileTest
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-/*		// ÔÚµ±Ç°Â·¾¶ÏÂ´´½¨Ò»¸öÁÙÊ±ÎÄ¼ş
+/*		// åœ¨å½“å‰è·¯å¾„ä¸‹åˆ›å»ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶
 		File tmpFile = File.createTempFile("aaa", ".txt", file);
-		// Ö¸¶¨µ±JVMÍË³öÊ±É¾³ı¸ÃÎÄ¼ş
+		// æŒ‡å®šå½“JVMé€€å‡ºæ—¶åˆ é™¤è¯¥æ–‡ä»¶
 		tmpFile.deleteOnExit();
-		// ÒÔÏµÍ³µ±Ç°Ê±¼ä×÷ÎªĞÂÎÄ¼şÃûÀ´´´½¨ĞÂÎÄ¼ş
+		// ä»¥ç³»ç»Ÿå½“å‰æ—¶é—´ä½œä¸ºæ–°æ–‡ä»¶åæ¥åˆ›å»ºæ–°æ–‡ä»¶
 		File newFile = new File(System.currentTimeMillis() + "");
-		System.out.println("newFile¶ÔÏóÊÇ·ñ´æÔÚ£º" + newFile.exists());
-		// ÒÔÖ¸¶¨newFile¶ÔÏóÀ´´´½¨Ò»¸öÎÄ¼ş
+		System.out.println("newFileå¯¹è±¡æ˜¯å¦å­˜åœ¨ï¼š" + newFile.exists());
+		// ä»¥æŒ‡å®šnewFileå¯¹è±¡æ¥åˆ›å»ºä¸€ä¸ªæ–‡ä»¶
 		newFile.createNewFile();
-		// ÒÔnewFile¶ÔÏóÀ´´´½¨Ò»¸öÄ¿Â¼£¬ÒòÎªnewFileÒÑ¾­´æÔÚ£¬
-		// ËùÒÔÏÂÃæ·½·¨·µ»Øfalse£¬¼´ÎŞ·¨´´½¨¸ÃÄ¿Â¼
+		// ä»¥newFileå¯¹è±¡æ¥åˆ›å»ºä¸€ä¸ªç›®å½•ï¼Œå› ä¸ºnewFileå·²ç»å­˜åœ¨ï¼Œ
+		// æ‰€ä»¥ä¸‹é¢æ–¹æ³•è¿”å›falseï¼Œå³æ— æ³•åˆ›å»ºè¯¥ç›®å½•
 		newFile.mkdir();
-		// Ê¹ÓÃlist()·½·¨À´ÁĞ³öµ±Ç°Â·¾¶ÏÂµÄËùÓĞÎÄ¼şºÍÂ·¾¶
+		// ä½¿ç”¨list()æ–¹æ³•æ¥åˆ—å‡ºå½“å‰è·¯å¾„ä¸‹çš„æ‰€æœ‰æ–‡ä»¶å’Œè·¯å¾„
 		String[] fileList = file.list();
-		System.out.println("====µ±Ç°Â·¾¶ÏÂËùÓĞÎÄ¼şºÍÂ·¾¶ÈçÏÂ====");
+		System.out.println("====å½“å‰è·¯å¾„ä¸‹æ‰€æœ‰æ–‡ä»¶å’Œè·¯å¾„å¦‚ä¸‹====");
 		for (String fileName : fileList)
 		{
 			System.out.println(fileName);
 		}
-		// listRoots()¾²Ì¬·½·¨ÁĞ³öËùÓĞµÄ´ÅÅÌ¸ùÂ·¾¶¡£
+		// listRoots()é™æ€æ–¹æ³•åˆ—å‡ºæ‰€æœ‰çš„ç£ç›˜æ ¹è·¯å¾„ã€‚
 		File[] roots = File.listRoots();
-		System.out.println("====ÏµÍ³ËùÓĞ¸ùÂ·¾¶ÈçÏÂ====");
+		System.out.println("====ç³»ç»Ÿæ‰€æœ‰æ ¹è·¯å¾„å¦‚ä¸‹====");
 		for (File root : roots)
 		{
 			System.out.println(root);

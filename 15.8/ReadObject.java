@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,14 +15,14 @@ public class ReadObject
 	public static void main(String[] args)
 	{
 		try(
-			// ´´½¨Ò»¸öObjectInputStreamÊäÈëÁ÷
+			// åˆ›å»ºä¸€ä¸ªObjectInputStreamè¾“å…¥æµ
 			ObjectInputStream ois = new ObjectInputStream(
 				new FileInputStream("object.txt")))
 		{
-			// ´ÓÊäÈëÁ÷ÖĞ¶ÁÈ¡Ò»¸öJava¶ÔÏó£¬²¢½«ÆäÇ¿ÖÆÀàĞÍ×ª»»ÎªPersonÀà
+			// ä»è¾“å…¥æµä¸­è¯»å–ä¸€ä¸ªJavaå¯¹è±¡ï¼Œå¹¶å°†å…¶å¼ºåˆ¶ç±»å‹è½¬æ¢ä¸ºPersonç±»
 			Person p = (Person)ois.readObject();
-			System.out.println("Ãû×ÖÎª£º" + p.getName()
-				+ "\nÄêÁäÎª£º" + p.getAge());
+			System.out.println("åå­—ä¸ºï¼š" + p.getName()
+				+ "\nå¹´é¾„ä¸ºï¼š" + p.getAge());
 		}
 		catch (Exception ex)
 		{

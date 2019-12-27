@@ -3,7 +3,7 @@ package resolve;
 import java.io.*;
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> 
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,7 +21,7 @@ public class Orientation
 	{
 		this.value = value;
 	}
-	//为枚举类增加readResolve()方法
+	//涓烘灇涓剧被澧炲姞readResolve()鏂规硶
 private Object readResolve()throws ObjectStreamException
 {
 	if (value == 1)

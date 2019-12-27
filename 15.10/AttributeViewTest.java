@@ -7,7 +7,7 @@ import java.nio.charset.*;
 import java.nio.file.attribute.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,37 +20,37 @@ public class AttributeViewTest
 	public static void main(String[] args)
 		throws Exception
 	{
-		// »ñÈ¡½«Òª²Ù×÷µÄÎÄ¼ş
+		// è·å–å°†è¦æ“ä½œçš„æ–‡ä»¶
 		Path testPath = Paths.get("15.10/AttributeViewTest.java");
-		// »ñÈ¡·ÃÎÊ»ù±¾ÊôĞÔµÄBasicFileAttributeView
+		// è·å–è®¿é—®åŸºæœ¬å±æ€§çš„BasicFileAttributeView
 		BasicFileAttributeView basicView = Files.getFileAttributeView(
 			testPath , BasicFileAttributeView.class);
-		// »ñÈ¡·ÃÎÊ»ù±¾ÊôĞÔµÄBasicFileAttributes
+		// è·å–è®¿é—®åŸºæœ¬å±æ€§çš„BasicFileAttributes
 		BasicFileAttributes basicAttribs = basicView.readAttributes();
-		// ·ÃÎÊÎÄ¼şµÄ»ù±¾ÊôĞÔ
-		System.out.println("´´½¨Ê±¼ä£º" + new Date(basicAttribs
+		// è®¿é—®æ–‡ä»¶çš„åŸºæœ¬å±æ€§
+		System.out.println("åˆ›å»ºæ—¶é—´ï¼š" + new Date(basicAttribs
 			.creationTime().toMillis()));
-		System.out.println("×îºó·ÃÎÊÊ±¼ä£º" + new Date(basicAttribs
+		System.out.println("æœ€åè®¿é—®æ—¶é—´ï¼š" + new Date(basicAttribs
 			.lastAccessTime().toMillis()));
-		System.out.println("×îºóĞŞ¸ÄÊ±¼ä£º" + new Date(basicAttribs
+		System.out.println("æœ€åä¿®æ”¹æ—¶é—´ï¼š" + new Date(basicAttribs
 			.lastModifiedTime().toMillis()));
-		System.out.println("ÎÄ¼ş´óĞ¡£º" + basicAttribs.size());
-		// »ñÈ¡·ÃÎÊÎÄ¼şÊôÖ÷ĞÅÏ¢µÄFileOwnerAttributeView
+		System.out.println("æ–‡ä»¶å¤§å°ï¼š" + basicAttribs.size());
+		// è·å–è®¿é—®æ–‡ä»¶å±ä¸»ä¿¡æ¯çš„FileOwnerAttributeView
 		FileOwnerAttributeView ownerView = Files.getFileAttributeView(
 			testPath, FileOwnerAttributeView.class);
-		// »ñÈ¡¸ÃÎÄ¼şËùÊôµÄÓÃ»§
+		// è·å–è¯¥æ–‡ä»¶æ‰€å±çš„ç”¨æˆ·
 		System.out.println(ownerView.getOwner());
-		// »ñÈ¡ÏµÍ³ÖĞguest¶ÔÓ¦µÄÓÃ»§
+		// è·å–ç³»ç»Ÿä¸­guestå¯¹åº”çš„ç”¨æˆ·
 		UserPrincipal user = FileSystems.getDefault()
 			.getUserPrincipalLookupService()
 			.lookupPrincipalByName("guest");
-		// ĞŞ¸ÄÓÃ»§
+		// ä¿®æ”¹ç”¨æˆ·
 		ownerView.setOwner(user);
-		// »ñÈ¡·ÃÎÊ×Ô¶¨ÒåÊôĞÔµÄFileOwnerAttributeView
+		// è·å–è®¿é—®è‡ªå®šä¹‰å±æ€§çš„FileOwnerAttributeView
 		UserDefinedFileAttributeView userView = Files.getFileAttributeView(
 			testPath, UserDefinedFileAttributeView.class);
 		List<String> attrNames = userView.list();
-		// ±éÀúËùÓĞµÄ×Ô¶¨ÒåÊôĞÔ
+		// éå†æ‰€æœ‰çš„è‡ªå®šä¹‰å±æ€§
 		for (String name : attrNames)
 		{
 			ByteBuffer buf = ByteBuffer.allocate(userView.size(name));
@@ -59,13 +59,13 @@ public class AttributeViewTest
 			String value = Charset.defaultCharset().decode(buf).toString();
 			System.out.println(name + "--->" + value) ;
 		}
-		// Ìí¼ÓÒ»¸ö×Ô¶¨ÒåÊôĞÔ
-		userView.write("·¢ĞĞÕß", Charset.defaultCharset()
-			.encode("·è¿ñJavaÁªÃË"));
-		// »ñÈ¡·ÃÎÊDOSÊôĞÔµÄDosFileAttributeView
+		// æ·»åŠ ä¸€ä¸ªè‡ªå®šä¹‰å±æ€§
+		userView.write("å‘è¡Œè€…", Charset.defaultCharset()
+			.encode("ç–¯ç‹‚Javaè”ç›Ÿ"));
+		// è·å–è®¿é—®DOSå±æ€§çš„DosFileAttributeView
 		DosFileAttributeView dosView = Files.getFileAttributeView(testPath
 			, DosFileAttributeView.class);
-		// ½«ÎÄ¼şÉèÖÃÒş²Ø¡¢Ö»¶Á
+		// å°†æ–‡ä»¶è®¾ç½®éšè—ã€åªè¯»
 		dosView.setHidden(true);
 		dosView.setReadOnly(true);
 	}

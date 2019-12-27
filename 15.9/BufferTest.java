@@ -2,7 +2,7 @@
 import java.nio.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,34 +14,34 @@ public class BufferTest
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Buffer
-		CharBuffer buff = CharBuffer.allocate(8);    //¢Ù
+		// åˆ›å»ºBuffer
+		CharBuffer buff = CharBuffer.allocate(8);    //â‘ 
 		System.out.println("capacity: "	+ buff.capacity());
 		System.out.println("limit: " + buff.limit());
 		System.out.println("position: " + buff.position());
-		// ·ÅÈëÔªËØ
+		// æ”¾å…¥å…ƒç´ 
 		buff.put('a');
 		buff.put('b');
-		buff.put('c');      //¢Ú
-		System.out.println("¼ÓÈëÈı¸öÔªËØºó£¬position = "
+		buff.put('c');      //â‘¡
+		System.out.println("åŠ å…¥ä¸‰ä¸ªå…ƒç´ åï¼Œposition = "
 			+ buff.position());
-		System.out.println("Ö´ĞĞflip()Ç°£¬limit = " + buff.limit());
-		// µ÷ÓÃflip()·½·¨
-		buff.flip();	  //¢Û
-		System.out.println("Ö´ĞĞflip()ºó£¬limit = " + buff.limit());
+		System.out.println("æ‰§è¡Œflip()å‰ï¼Œlimit = " + buff.limit());
+		// è°ƒç”¨flip()æ–¹æ³•
+		buff.flip();	  //â‘¢
+		System.out.println("æ‰§è¡Œflip()åï¼Œlimit = " + buff.limit());
 		System.out.println("position = " + buff.position());
-		// È¡³öµÚÒ»¸öÔªËØ
-		System.out.println("µÚÒ»¸öÔªËØ(position=0)£º" + buff.get());  // ¢Ü
-		System.out.println("È¡³öÒ»¸öÔªËØºó£¬position = " 
+		// å–å‡ºç¬¬ä¸€ä¸ªå…ƒç´ 
+		System.out.println("ç¬¬ä¸€ä¸ªå…ƒç´ (position=0)ï¼š" + buff.get());  // â‘£
+		System.out.println("å–å‡ºä¸€ä¸ªå…ƒç´ åï¼Œposition = " 
 			+ buff.position());
-		// µ÷ÓÃclear·½·¨
-		buff.clear();     //¢İ
-		System.out.println("Ö´ĞĞclear()ºó£¬limit = " + buff.limit());	
-		System.out.println("Ö´ĞĞclear()ºó£¬position = "
+		// è°ƒç”¨clearæ–¹æ³•
+		buff.clear();     //â‘¤
+		System.out.println("æ‰§è¡Œclear()åï¼Œlimit = " + buff.limit());	
+		System.out.println("æ‰§è¡Œclear()åï¼Œposition = "
 			+ buff.position());
-		System.out.println("Ö´ĞĞclear()ºó£¬»º³åÇøÄÚÈİ²¢Ã»ÓĞ±»Çå³ı£º"
-			+ "µÚÈı¸öÔªËØÎª£º" +  buff.get(2));    // ¢Ş
-		System.out.println("Ö´ĞĞ¾ø¶Ô¶ÁÈ¡ºó£¬position = "
+		System.out.println("æ‰§è¡Œclear()åï¼Œç¼“å†²åŒºå†…å®¹å¹¶æ²¡æœ‰è¢«æ¸…é™¤ï¼š"
+			+ "ç¬¬ä¸‰ä¸ªå…ƒç´ ä¸ºï¼š" +  buff.get(2));    // â‘¥
+		System.out.println("æ‰§è¡Œç»å¯¹è¯»å–åï¼Œposition = "
 			+ buff.position());
 	}
 }

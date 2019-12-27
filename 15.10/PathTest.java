@@ -4,7 +4,7 @@ import java.net.*;
 import java.nio.file.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,22 +17,22 @@ public class PathTest
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ÒÔµ±Ç°Â·¾¶À´´´½¨Path¶ÔÏó
+		// ä»¥å½“å‰è·¯å¾„æ¥åˆ›å»ºPathå¯¹è±¡
 		Path path = Paths.get(".");
-		System.out.println("pathÀï°üº¬µÄÂ·¾¶ÊıÁ¿£º"
+		System.out.println("pathé‡ŒåŒ…å«çš„è·¯å¾„æ•°é‡ï¼š"
 			+ path.getNameCount());
-		System.out.println("pathµÄ¸ùÂ·¾¶£º" + path.getRoot());
-		// »ñÈ¡path¶ÔÓ¦µÄ¾ø¶ÔÂ·¾¶¡£
+		System.out.println("pathçš„æ ¹è·¯å¾„ï¼š" + path.getRoot());
+		// è·å–pathå¯¹åº”çš„ç»å¯¹è·¯å¾„ã€‚
 		Path absolutePath = path.toAbsolutePath();
 		System.out.println(absolutePath);
-		// »ñÈ¡¾ø¶ÔÂ·¾¶µÄ¸ùÂ·¾¶
-		System.out.println("absolutePathµÄ¸úÂ·¾¶£º"
+		// è·å–ç»å¯¹è·¯å¾„çš„æ ¹è·¯å¾„
+		System.out.println("absolutePathçš„è·Ÿè·¯å¾„ï¼š"
 			+ absolutePath.getRoot());
-		// »ñÈ¡¾ø¶ÔÂ·¾¶Ëù°üº¬µÄÂ·¾¶ÊıÁ¿
-		System.out.println("absolutePathÀï°üº¬µÄÂ·¾¶ÊıÁ¿£º"
+		// è·å–ç»å¯¹è·¯å¾„æ‰€åŒ…å«çš„è·¯å¾„æ•°é‡
+		System.out.println("absolutePathé‡ŒåŒ…å«çš„è·¯å¾„æ•°é‡ï¼š"
 			+ absolutePath.getNameCount());
 		System.out.println(absolutePath.getName(0));
-		// ÒÔ¶à¸öStringÀ´¹¹½¨Path¶ÔÏó
+		// ä»¥å¤šä¸ªStringæ¥æ„å»ºPathå¯¹è±¡
 		Path path2 = Paths.get("g:" , "publish" , "codes");
 		System.out.println(path2);
 	}

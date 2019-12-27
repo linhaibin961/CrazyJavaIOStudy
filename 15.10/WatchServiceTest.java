@@ -4,7 +4,7 @@ import java.nio.file.*;
 import java.nio.file.attribute.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,26 +17,26 @@ public class WatchServiceTest
 	public static void main(String[] args) 
 		throws Exception
 	{
-		// »ñÈ¡ÎÄ¼şÏµÍ³µÄWatchService¶ÔÏó
+		// è·å–æ–‡ä»¶ç³»ç»Ÿçš„WatchServiceå¯¹è±¡
 		WatchService watchService = FileSystems.getDefault()
 			.newWatchService();
-		// ÎªC:ÅÌ¸ùÂ·¾¶×¢²á¼àÌı
+		// ä¸ºC:ç›˜æ ¹è·¯å¾„æ³¨å†Œç›‘å¬
 		Paths.get("F:/").register(watchService 
 			, StandardWatchEventKinds.ENTRY_CREATE
 			, StandardWatchEventKinds.ENTRY_MODIFY
 			, StandardWatchEventKinds.ENTRY_DELETE);
 		while(true)
 		{
-			// »ñÈ¡ÏÂÒ»¸öÎÄ¼ş¸Ä¶¯ÊÂ¼ş
-			WatchKey key = watchService.take();    //¢Ù
+			// è·å–ä¸‹ä¸€ä¸ªæ–‡ä»¶æ”¹åŠ¨äº‹ä»¶
+			WatchKey key = watchService.take();    //â‘ 
 			for (WatchEvent<?> event : key.pollEvents()) 
 			{
-				System.out.println(event.context() +" ÎÄ¼ş·¢ÉúÁË "
-					+ event.kind()+ "ÊÂ¼ş£¡");
+				System.out.println(event.context() +" æ–‡ä»¶å‘ç”Ÿäº† "
+					+ event.kind()+ "äº‹ä»¶ï¼");
 			}
-			// ÖØÉèWatchKey
+			// é‡è®¾WatchKey
 			boolean valid = key.reset();
-			// Èç¹ûÖØÉèÊ§°Ü£¬ÍË³ö¼àÌı
+			// å¦‚æœé‡è®¾å¤±è´¥ï¼Œé€€å‡ºç›‘å¬
 			if (!valid) 
 			{
 				break;

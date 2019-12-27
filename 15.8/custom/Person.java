@@ -3,7 +3,7 @@ package custom;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,16 +16,16 @@ public class Person
 {
 	private String name;
 	private int age;
-	// ×¢Òâ´Ë´¦Ã»ÓÐÌá¹©ÎÞ²ÎÊýµÄ¹¹ÔìÆ÷!
+	// æ³¨æ„æ­¤å¤„æ²¡æœ‰æä¾›æ— å‚æ•°çš„æž„é€ å™¨!
 	public Person(String name , int age)
 	{
-		System.out.println("ÓÐ²ÎÊýµÄ¹¹ÔìÆ÷");
+		System.out.println("æœ‰å‚æ•°çš„æž„é€ å™¨");
 		this.name = name;
 		this.age = age;
 	}
-	// Ê¡ÂÔnameÓëageµÄsetterºÍgetter·½·¨
+	// çœç•¥nameä¸Žageçš„setterå’Œgetteræ–¹æ³•
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -35,7 +35,7 @@ public class Person
 		return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -48,14 +48,14 @@ public class Person
 	private void writeObject(java.io.ObjectOutputStream out)
 		throws IOException
 	{
-		// ½«name FieldµÄÖµ·´×ªºóÐ´Èë¶þ½øÖÆÁ÷
+		// å°†name Fieldçš„å€¼åè½¬åŽå†™å…¥äºŒè¿›åˆ¶æµ
 		out.writeObject(new StringBuffer(name).reverse());
 		out.writeInt(age);
 	}
 	private void readObject(java.io.ObjectInputStream in)
 		throws IOException, ClassNotFoundException
 	{
-		// ½«¶ÁÈ¡µÄ×Ö·û´®·´×ªºó¸³¸øname Field
+		// å°†è¯»å–çš„å­—ç¬¦ä¸²åè½¬åŽèµ‹ç»™name Field
 		this.name = ((StringBuffer)in.readObject()).reverse()
 			.toString();
 		this.age = in.readInt();

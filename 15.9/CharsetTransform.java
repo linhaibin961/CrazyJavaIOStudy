@@ -1,40 +1,42 @@
 
-import java.nio.*;
-import java.nio.charset.*;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
+
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
  * <br/>Date:
+ *
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-public class CharsetTransform
-{
-	public static void main(String[] args)
-		throws Exception
-	{
-		// ´´½¨¼òÌåÖĞÎÄ¶ÔÓ¦µÄCharset
-		Charset cn = Charset.forName("GBK");
-		// »ñÈ¡cn¶ÔÏó¶ÔÓ¦µÄ±àÂëÆ÷ºÍ½âÂëÆ÷
-		CharsetEncoder cnEncoder = cn.newEncoder();
-		CharsetDecoder cnDecoder = cn.newDecoder();
-		// ´´½¨Ò»¸öCharBuffer¶ÔÏó
-		CharBuffer cbuff = CharBuffer.allocate(8);
-		cbuff.put('Ëï');
-		cbuff.put('Îò');
-		cbuff.put('¿Õ');
-		cbuff.flip();
-		// ½«CharBufferÖĞµÄ×Ö·ûĞòÁĞ×ª»»³É×Ö½ÚĞòÁĞ
-		ByteBuffer bbuff = cnEncoder.encode(cbuff);
-		// Ñ­»··ÃÎÊByteBufferÖĞµÄÃ¿¸ö×Ö½Ú
-		for (int i = 0; i < bbuff.capacity() ; i++)
-		{
-			System.out.print(bbuff.get(i) + " ");
-		}
-		// ½«ByteBufferµÄÊı¾İ½âÂë³É×Ö·ûĞòÁĞ
-		System.out.println("\n" + cnDecoder.decode(bbuff));
-	}
+public class CharsetTransform {
+    public static void main(String[] args)
+            throws Exception {
+        // åˆ›å»ºç®€ä½“ä¸­æ–‡å¯¹åº”çš„Charset
+        Charset cn = Charset.forName("GBK");
+        // è·å–cnå¯¹è±¡å¯¹åº”çš„ç¼–ç å™¨å’Œè§£ç å™¨
+        CharsetEncoder cnEncoder = cn.newEncoder();
+        CharsetDecoder cnDecoder = cn.newDecoder();
+        // åˆ›å»ºä¸€ä¸ªCharBufferå¯¹è±¡
+        CharBuffer cbuff = CharBuffer.allocate(8);
+        cbuff.put('å­™');
+        cbuff.put('æ‚Ÿ');
+        cbuff.put('ç©º');
+        cbuff.flip();
+        // å°†CharBufferä¸­çš„å­—ç¬¦åºåˆ—è½¬æ¢æˆå­—èŠ‚åºåˆ—
+        ByteBuffer bbuff = cnEncoder.encode(cbuff);
+// å¾ªç¯è®¿é—®ByteBufferä¸­çš„æ¯ä¸ªå­—èŠ‚
+        for (int i = 0; i < bbuff.capacity(); i++) {
+            System.out.print(bbuff.get(i) + " ");
+        }
+// å°†ByteBufferçš„æ•°æ®è§£ç æˆå­—ç¬¦åºåˆ—
+        System.out.println("\n" + cnDecoder.decode(bbuff));
+    }
 }

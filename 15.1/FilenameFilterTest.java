@@ -2,7 +2,7 @@
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,12 +22,12 @@ public class FilenameFilterTest
 		}
 	}
 }
-// ÊµÏÖ×Ô¼ºµÄFilenameFilterÊµÏÖÀà
+// å®ç°è‡ªå·±çš„FilenameFilterå®ç°ç±»
 class MyFilenameFilter implements FilenameFilter
 {
 	public boolean accept(File dir, String name)
 	{
-		// Èç¹ûÎÄ¼şÃûÒÔ.java½áÎ²£¬»òÕßÎÄ¼ş¶ÔÓ¦Ò»¸öÂ·¾¶£¬·µ»Øtrue
+		// å¦‚æœæ–‡ä»¶åä»¥.javaç»“å°¾ï¼Œæˆ–è€…æ–‡ä»¶å¯¹åº”ä¸€ä¸ªè·¯å¾„ï¼Œè¿”å›true
 		return name.endsWith(".java")
 			|| new File(name).isDirectory();
 	}

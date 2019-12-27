@@ -2,7 +2,7 @@ package transientpackage;
 
 /**
  * Description: <br/>
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> <br/>
+ * 缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> <br/>
  * Copyright (C), 2001-2012, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,16 +15,16 @@ public class Person implements java.io.Serializable {
 	private String name;
 	private transient int age;
 
-	// 注意此处没有提供无参数的构造器!
+	// 娉ㄦ剰姝ゅ娌℃湁鎻愪緵鏃犲弬鏁扮殑鏋勯�犲櫒!
 	public Person(String name, int age) {
-		System.out.println("有参数的构造器");
+		System.out.println("鏈夊弬鏁扮殑鏋勯�犲櫒");
 		this.name = name;
 		this.age = age;
 	}
 
-	// 省略name与age的setter和getter方法
+	// 鐪佺暐name涓巃ge鐨剆etter鍜実etter鏂规硶
 
-	// name的setter和getter方法
+	// name鐨剆etter鍜実etter鏂规硶
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -33,7 +33,7 @@ public class Person implements java.io.Serializable {
 		return this.name;
 	}
 
-	// age的setter和getter方法
+	// age鐨剆etter鍜実etter鏂规硶
 	public void setAge(int age) {
 		this.age = age;
 	}

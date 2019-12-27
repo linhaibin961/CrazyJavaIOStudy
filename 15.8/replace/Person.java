@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,16 +17,16 @@ public class Person
 {
 	private String name;
 	private int age;
-	// ×¢Òâ´Ë´¦Ã»ÓĞÌá¹©ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷!
+	// æ³¨æ„æ­¤å¤„æ²¡æœ‰æä¾›æ— å‚æ•°çš„æ„é€ å™¨!
 	public Person(String name , int age)
 	{
-		System.out.println("ÓĞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("æœ‰å‚æ•°çš„æ„é€ å™¨");
 		this.name = name;
 		this.age = age;
 	}
-	// Ê¡ÂÔnameÓëageµÄsetterºÍgetter·½·¨
+	// çœç•¥nameä¸ageçš„setterå’Œgetteræ–¹æ³•
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -36,7 +36,7 @@ public class Person
 		return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -46,7 +46,7 @@ public class Person
 		return this.age;
 	}
 
-	//	ÖØĞ´writeReplace·½·¨£¬³ÌĞòÔÚĞòÁĞ»¯¸Ã¶ÔÏóÖ®Ç°£¬ÏÈµ÷ÓÃ¸Ã·½·¨
+	//	é‡å†™writeReplaceæ–¹æ³•ï¼Œç¨‹åºåœ¨åºåˆ—åŒ–è¯¥å¯¹è±¡ä¹‹å‰ï¼Œå…ˆè°ƒç”¨è¯¥æ–¹æ³•
 	private Object writeReplace()throws ObjectStreamException
 	{
 		ArrayList<Object> list = new ArrayList<>();
